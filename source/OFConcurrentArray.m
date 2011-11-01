@@ -14,7 +14,7 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
     if ([storage respondsToSelector:[anInvocation selector]]) {
-        BOOL isVoid = strcmp([anInvocation methodReturnType], @encode(void)) == 0;
+        BOOL isVoid = strcmp([[anInvocation methodSignature] methodReturnType], @encode(void)) == 0;
         dispathtools_isAsync(self.queue, isVoid, ^{
             [anInvocation invokeWithTarget:storage];
         });
