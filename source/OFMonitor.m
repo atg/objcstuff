@@ -14,6 +14,7 @@
 
 - (void)finalize {
     dispatch_release(queue);
+    [super finalize];
 }
 @end
 
