@@ -2,7 +2,7 @@
 
 // Run a block synchronously on a queue and return the result
 static id dispatchtools_through(dispatch_queue_t q, id(^f)(void)) {
-    __block result = nil;
+    __block id result = nil;
     dispatch_sync(q, ^{
         result = f();
     });
