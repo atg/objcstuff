@@ -12,9 +12,8 @@
     return self;
 }
 
-- (void)finalize {
+- (void)dealloc {
     dispatch_release(queue);
-    [super finalize];
 }
 @end
 
